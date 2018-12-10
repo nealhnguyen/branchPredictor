@@ -111,6 +111,7 @@ for diff_values in dataframes:
     split = .5
     trainSize = int(len(supervised_values) * split)
     train, test = supervised_values[:trainSize], supervised_values[trainSize:]
+    print(train)
 
     # fit the model
     lstm_model = fit_lstm(train, 1, 3000, 4)

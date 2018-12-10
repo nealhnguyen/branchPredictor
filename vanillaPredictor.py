@@ -4,13 +4,19 @@ from pandas import read_csv
 import numpy
 import pandas as pd
 from keras import optimizers
+from sklearn.preprocessing import StandardScaler
 
 # fix random seed for reproducibility
 seed = 7
 numpy.random.seed(seed)
 
-dataframe = read_csv('trace', sep=' ', header=None)
-#dataframe[0] = dataframe[0].apply(int, base=16)
+dataframe = read_csv('mcf_branch.out', sep=' ', header=None)
+#print(dataframe)
+dataframe = dataframe.drop(dataframe.columns[0], axis=1)
+dataframe.columns = [0, 1]
+dataframe[0] = dataframe[0].apply(int, base=16)
+#dataframe[0] = dataframe[0].apply(float)
+#dataframe[1] = dataframe[1].apply(float)
 
 dataframes = []
 for address in dataframe[0].unique():
@@ -32,6 +38,10 @@ for df in dataframes:
 
 formattedDF = pd.concat(newDataframes, ignore_index=True)
 print(formattedDF)
+scaler = StandardScaler()
+formattedDF['address'] = scaler.fit_transform(formattedDF['address'].values.reshape(-1, 1))
+#print(formattedDF)
+#exit(0)
 
 shuffledDF = formattedDF.sample(frac=1).reset_index(drop=True)
 dataset = shuffledDF.values
@@ -45,9 +55,9 @@ Y = dataset[:,historySize + 2]
 # exit(0)
 # create model
 model = Sequential()
-model.add(Dense(12, input_dim=historySize+2, init='uniform', activation='relu'))
-model.add(Dense(8, init='uniform', activation='relu'))
-model.add(Dense(1, init='uniform', activation='sigmoid'))
+model.add(Dense(12, input_dim=historySize+2, activation='sigmoid'))
+model.add(Dense(historySize+2, activation='sigmoid'))
+model.add(Dense(1, activation='sigmoid'))
 
 sgd = optimizers.SGD(lr=0.11)
 
