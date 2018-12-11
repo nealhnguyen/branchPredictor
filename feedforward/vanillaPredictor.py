@@ -10,10 +10,12 @@ from sklearn.preprocessing import StandardScaler
 seed = 7
 numpy.random.seed(seed)
 
-dataframe = read_csv('mcf_branch.out', sep=' ', header=None)
+dataframe = read_csv('gcc_branch', sep=' ', header=None)
 #print(dataframe)
 dataframe = dataframe.drop(dataframe.columns[0], axis=1)
 dataframe.columns = [0, 1]
+dataframe.to_csv('trace2', sep=' ', index=False, header=False)
+exit(0)
 dataframe[0] = dataframe[0].apply(int, base=16)
 #dataframe[0] = dataframe[0].apply(float)
 #dataframe[1] = dataframe[1].apply(float)
