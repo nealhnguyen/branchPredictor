@@ -159,24 +159,24 @@ int main (int argc, char *argv[])
     }
 
 	//Calculate the accuracy rate of each predictor
-    int accurateT = (int)((float)alwaysT * 100 / iCount + 0.5f);
-    int accurateNT = (int)((float)alwaysNT * 100 / iCount + 0.5f);
-    int accurate1bit8 = (int)((float)bimodal1bit8 * 100 / iCount + 0.5f);
-    int accurate1bit16 = (int)((float)bimodal1bit16 * 100 / iCount + 0.5f);
-    int accurate1bit32 = (int)((float)bimodal1bit32 * 100 / iCount + 0.5f);
-    int accurate1bit128 = (int)((float)bimodal1bit128 * 100 / iCount + 0.5f);
-    int accurate1bit256 = (int)((float)bimodal1bit256 * 100 / iCount + 0.5f);
-    int accurate1bit512 = (int)((float)bimodal1bit512 * 100 / iCount + 0.5f);
-    int accurate1bit1024 = (int)((float)bimodal1bit1024 * 100 / iCount + 0.5f);
-    int accurate2bit8 = (int)((float)bimodal2bit8 * 100 / iCount + 0.5f);
-    int accurate2bit16 = (int)((float)bimodal2bit16 * 100 / iCount + 0.5f);
-    int accurate2bit32 = (int)((float)bimodal2bit32 * 100 / iCount + 0.5f);
-    int accurate2bit128 = (int)((float)bimodal2bit128 * 100 / iCount + 0.5f);
-    int accurate2bit256 = (int)((float)bimodal2bit256 * 100 / iCount + 0.5f);
-    int accurate2bit512 = (int)((float)bimodal2bit512 * 100 / iCount + 0.5f);
-    int accurate2bit1024 = (int)((float)bimodal2bit1024 * 100 / iCount + 0.5f);
-    int accurateG[9] = {0};
-    int accurateTour = (int)((float)tCounter * 100 / iCount + 0.5f);
+    float accurateT = ((float)alwaysT * 100 / iCount + 0.5f);
+    float accurateNT = ((float)alwaysNT * 100 / iCount + 0.5f);
+    float accurate1bit8 = ((float)bimodal1bit8 * 100 / iCount + 0.5f);
+    float accurate1bit16 = ((float)bimodal1bit16 * 100 / iCount + 0.5f);
+    float accurate1bit32 = ((float)bimodal1bit32 * 100 / iCount + 0.5f);
+    float accurate1bit128 = ((float)bimodal1bit128 * 100 / iCount + 0.5f);
+    float accurate1bit256 = ((float)bimodal1bit256 * 100 / iCount + 0.5f);
+    float accurate1bit512 = ((float)bimodal1bit512 * 100 / iCount + 0.5f);
+    float accurate1bit1024 = ((float)bimodal1bit1024 * 100 / iCount + 0.5f);
+    float accurate2bit8 = ((float)bimodal2bit8 * 100 / iCount + 0.5f);
+    float accurate2bit16 = ((float)bimodal2bit16 * 100 / iCount + 0.5f);
+    float accurate2bit32 = ((float)bimodal2bit32 * 100 / iCount + 0.5f);
+    float accurate2bit128 = ((float)bimodal2bit128 * 100 / iCount + 0.5f);
+    float accurate2bit256 = ((float)bimodal2bit256 * 100 / iCount + 0.5f);
+    float accurate2bit512 = ((float)bimodal2bit512 * 100 / iCount + 0.5f);
+    float accurate2bit1024 = ((float)bimodal2bit1024 * 100 / iCount + 0.5f);
+    float accurateG[9] = {0};
+    float accurateTour = ((float)tCounter * 100 / iCount + 0.5f);
 
     fileOut << accurateT << endl;
     fileOut << accurateNT << endl;
