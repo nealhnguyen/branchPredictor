@@ -14,6 +14,11 @@ The **regular** folder contains a python script to test 2 level adaptive predict
 * call `python sim.py`
 * it will run a branch predictor simulation on `mcf_branch` and `gcc_branch`
 
-The staticNN folder
+The staticNN folder contians a pythons script for a feedForward neural net that will train a branch simulation file.
+*To run:*
+* call `python staticNN.py`
+* it will run a branch predictor simulation on `gcc_branch` and output the accuracy as it trains
+* note that training can take up to an hour with a large file like gcc_branch
+* `mcf_branch` and `gcc_branch` are placed in there as example input files
 
 The adaptiveNN folder
