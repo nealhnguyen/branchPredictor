@@ -31,7 +31,7 @@ pyparsing==2.2.2
 python-dateutil==2.7.3
 pytz==2018.7
 pywemo==0.4.32
-PyYAML==3.13
+PyYAML==5.4
 requests==2.20.1
 scapy==2.4.0
 scikit-learn==0.20.0
